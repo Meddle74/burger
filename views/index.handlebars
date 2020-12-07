@@ -1,32 +1,51 @@
 <div class="container">
-    <h1>Eat the Burger</h1>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="lefthead"><strong>Burgers</strong></div>
-                <div class="panel-body">
-                    <ul>
-                        {{#each burgers}}
-                        {{#unless devoured}}
-                        <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                        <hr>
-                        {{/unless}}
-                        {{/each}}
-                    </ul>
+    {{!-- image --}}
+    <img src="/assets/img/homer3.png " class="img-responsive" alt="Homer" width="1000" height="600">
+    {{!-- add burger --}}
+    <div class="row row-flex">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newburger" style="padding: 50px 0 0 5px;" class="text">Give Homer A New Burger To Try :</label>
+                    <input type="text" id="newburger" name="burger">
+                    <button type="submit button" class="btn btn-primary" onclick="play()">Submit</button>
                 </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row row-flex">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="content colour-1">
+                <h3>Homer's List of Burgers!</h3>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <span><strong>{{this.burger_name}} </strong></span>
+                    <br><br>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="content colour-2">
+                <h3>Homers Burgers Eaten!</h3>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <span><strong>{{this.burger_name}} </strong></span>
+                    <br><br>
+                    {{/if}}
+                    {{/each}}
+                </ul>
             </div>
         </div>
     </div>
-
-
-    {{!-- add burger form --}}
-    <h2>Add a Burger</h2>
-    <form class="create-form">
-        <div class="form-group">
-            <label for="newburger">New Burger Name:</label>
-            <input type="text" id="newburger" name="burger">
-            <button type="submit button" class="btn btn-success">Submit</button>
-        </div>
-    </form>
 </div>
+
+
+
+<button onclick="play()">Play Audio</button>

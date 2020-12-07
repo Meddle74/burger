@@ -1,0 +1,69 @@
+/* .jumbotron {
+    background-image: url("../img/burgetime.jpg");
+    background-size: cover;
+  } */
+
+body {
+  background-color: #68655e;
+  margin-top: 20px;
+}
+
+/* display this row with flex and use wrap (= respect columns' widths) */
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.text {
+  color: #fff;
+}
+
+/* vertical spacing between columns */
+
+[class*="col-"] {
+  margin-bottom: 30px;
+}
+
+.content {
+  height: 100%;
+  padding: 20px 20px 10px;
+  color: #fff;
+}
+
+
+/* Demo backgrounds and styling*/
+
+.colour-1 {
+  background: #243d97;
+  color: #fff;
+}
+
+.colour-2 {
+  background: #3C6E71;
+}
+
+
+.btn-primary {
+  background: #243d97;
+}
+
+.colour-3 {
+  background: #70AE6E;
+}
+
+body {
+  padding: 20px 0;
+  font-family: Roboto, sans-serif;
+}
+
+.content h3 {
+  margin-top: 0px;
+  font-weight: 300;
+}
+
+h1 {
+  font-weight: 300;
+  margin-bottom: 40px;
+}
