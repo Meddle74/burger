@@ -8,7 +8,7 @@
                 <div class="form-group">
                     <label for="newburger" style="padding: 50px 0 0 5px;" class="text">Give Homer A New Burger To Try :</label>
                     <input type="text" id="newburger" name="burger">
-                    <button type="submit button" class="btn btn-primary" onclick="play()">Submit</button>
+                    <button type="submit button" class="btn btn-primary" onclick="playWoohoo()">Add A Burger</button>
                 </div>
             </form>
         </div>
@@ -19,7 +19,7 @@
     <div class="row row-flex">
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="content colour-1">
-                <h3>Homer's List of Burgers!</h3>
+                <h3 style="padding: 0 0 20px 0;">Homer's List of Burgers!</h3>
                 <ul>
                     {{#each burgers}}
                     {{#unless devoured}}
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="content colour-2">
-                <h3>Homers Burgers Eaten!</h3>
+               <h3 style="padding: 0 0 20px 0;">Homers Burgers Eaten!</h3>
                 <ul>
                     {{#each burgers}}
                     {{#if devoured}}
@@ -45,7 +45,3 @@
         </div>
     </div>
 </div>
-
-
-
-<button onclick="play()">Play Audio</button>

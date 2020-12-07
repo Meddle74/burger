@@ -55,7 +55,8 @@ body {
 
 body {
   padding: 20px 0;
-  font-family: Roboto, sans-serif;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 200%;
 }
 
 .content h3 {
