@@ -6,7 +6,8 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <form class="create-form">
                 <div class="form-group">
-                    <label for="newburger" style="padding: 50px 0 0 5px;" class="text">Give Homer A New Burger To Try :</label>
+                    <label for="newburger" style="padding: 50px 0 0 5px;" class="text">Give Homer A New Burger To Try
+                        :</label>
                     <input type="text" id="newburger" name="burger">
                     <button type="submit button" class="btn btn-primary" onclick="playWoohoo()">Add A Burger</button>
                 </div>
@@ -14,9 +15,10 @@
         </div>
     </div>
 </div>
-
+{{!-- burgers container --}}
 <div class="container">
     <div class="row row-flex">
+        {{!-- burgers to eat --}}
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="content colour-1">
                 <h3 style="padding: 0 0 20px 0;">Homer's List of Burgers!</h3>
@@ -24,19 +26,24 @@
                     {{#each burgers}}
                     {{#unless devoured}}
                     <span><strong>{{this.burger_name}} </strong></span>
+                    <button class="devour btn btn-warning pull-right" data-id="{{id}}" onclick="playBurger()">Devour
+                        it!</button>
                     <br><br>
                     {{/unless}}
                     {{/each}}
                 </ul>
             </div>
         </div>
+        {{!-- burgers eaten --}}
         <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="content colour-2">
-               <h3 style="padding: 0 0 20px 0;">Homers Burgers Eaten!</h3>
+                <h3 style="padding: 0 0 20px 0;">Homers Burgers Eaten!</h3>
                 <ul>
                     {{#each burgers}}
                     {{#if devoured}}
                     <span><strong>{{this.burger_name}} </strong></span>
+                    <button class="put btn btn-danger pull-right" data-id="{{id}}" onclick="playDoh()">Put back on
+                        List!</button>
                     <br><br>
                     {{/if}}
                     {{/each}}

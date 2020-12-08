@@ -24,4 +24,20 @@ router.post('/api/burgers', function (req, res) {
   );
 });
 
+// Eat burger or Put back on list
+router.put("/api/burgers/:id", (req, res) => {
+  const condition = `id = ${req.params.id}`;
+
+  burger.update(
+    {
+      devoured: req.body.devoured,
+    },
+    condition,
+    (result) => {
+      if (result.changedRows == 0) res.status(404).end();
+      else res.status(200).end();
+    }
+  );
+});
+
 module.exports = router;

@@ -10,7 +10,30 @@ $(function () {
       type: 'POST',
       data: newBurger,
     }).then(() => {
-      console.log('Added new burger');
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
+    });
+  });
+
+  $('.devour').on('click', function (event) {
+    const id = $(this).data('id');
+    $.ajax(`/api/burgers/ ${id}`, {
+      type: 'PUT',
+      data: { devoured: 1 },
+    }).then(() => {
+      setTimeout(function () {
+        location.reload();
+      }, 2500);
+    });
+  });
+
+  $('.put').on('click', function (event) {
+    const id = $(this).data('id');
+    $.ajax(`/api/burgers/ ${id}`, {
+      type: 'PUT',
+      data: { devoured: 0 },
+    }).then(() => {
       setTimeout(function () {
         location.reload();
       }, 1000);
@@ -19,11 +42,16 @@ $(function () {
 });
 
 function playWoohoo() {
-  var audio = new Audio('/assets/sounds/woohoo.mp3');
+  const audio = new Audio('/assets/sounds/woohoo.mp3');
   audio.play();
 }
 
 function playBurger() {
-  var audio = new Audio('/assets/sounds/mburger.mp3');
+  const audio = new Audio('/assets/sounds/mburger.mp3');
+  audio.play();
+}
+
+function playDoh() {
+  const audio = new Audio('/assets/sounds/doh.mp3');
   audio.play();
 }
